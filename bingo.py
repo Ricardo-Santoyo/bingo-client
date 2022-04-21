@@ -37,10 +37,15 @@ def getball(gc, bc): # Gets the next ball from the server and returns the value.
 def update_board(ball): # Updates the board with the ball given
   print(ball)
 
+def quitgame(gc, bc):
+    message = f'QG#ter{gc}#{bc}'
+    response = send.message(message).split(',')
+    return response[-1]
+
 ### Menu below ###
 user_input = ''
 
-while user_input != '6':
+while user_input < '6':
   print('MAIN MENU')
   print('Enter number for option')
   print('1 - New Game')
@@ -63,3 +68,5 @@ while user_input != '6':
       update_board(getball(game_code, board_code))
 
   user_input = input()
+else:
+    quitgame(game_code, board_code)
