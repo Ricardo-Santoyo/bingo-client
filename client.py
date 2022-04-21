@@ -1,5 +1,4 @@
 import send
-import printboard
 
 game_code = None
 board_code = None
@@ -36,28 +35,9 @@ def getball(gc, bc): # Gets the next ball from the server and returns the value.
   return response[0]
 
 def update_board(ball): # Updates the board with the ball given
-  if ball > '60':
-    check_space(4, ball)
-    print('o')
-  elif ball > '45':
-    check_space(3, ball)
-    print('g')
-  elif ball > '30':
-    check_space(2, ball)
-    print('n')
-  elif ball > '15':
-    check_space(1, ball)
-    print('i')
-  else:
-    check_space(0, ball)
-    print('b')
+  print(ball)
 
-def check_space(col, ball): # checks to see if space is equal to ball if so replaces it with x.
-  for i in range(5):
-    board_list[col][i] = 'x' if (board_list[col][i] == ball) else board_list[col][i]
-  printboard.printboard(board_list)
-
-def quitgame(gc, bc): # Quits the game when the command is given.
+def quitgame(gc, bc):
     message = f'QG#ter{gc}#{bc}'
     response = send.message(message).split(',')
     return response[-1]
@@ -78,7 +58,7 @@ while user_input < '6':
   match user_input:
     case "1":
       game_code = newgame()
-    case "2": 
+    case "2":
       newgame()
     case "3":
       board_code = getboard(f'GB#{game_code}')
@@ -86,7 +66,7 @@ while user_input < '6':
       getstatus(f'GS#{game_code}')
     case "5":
       update_board(getball(game_code, board_code))
-  
+
   user_input = input()
 else:
     quitgame(game_code, board_code)
