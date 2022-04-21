@@ -37,7 +37,7 @@ def getball(gc, bc): # Gets the next ball from the server and returns the value.
 def update_board(ball): # Updates the board with the ball given
   print(ball)
 
-
+### Menu below ###
 user_input = ''
 
 while user_input != '6':
