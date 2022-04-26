@@ -1,5 +1,6 @@
 import send
 import printboard
+import check
 
 game_code = None
 board_code = None
@@ -55,7 +56,8 @@ def update_board(ball): # Updates the board with the ball given
 def check_space(col, ball): # checks to see if space is equal to ball if so replaces it with x.
   for i in range(5):
     board_list[col][i] = 'x' if (board_list[col][i] == ball) else board_list[col][i]
-  printboard.printboard(board_list)
+    printboard.printboard(board_list)
+    check.bingo(board_list)
 
 def quitgame(gc, bc): # Quits the game when the command is given.
     message = f'QG#ter{gc}#{bc}'
