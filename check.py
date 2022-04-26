@@ -4,7 +4,7 @@ def bingo(board): # checks the game board for bingo.
   else:
     print('not yet.')
 
-def check_columns(board): # checks all board columns for bingo
+def check_columns(board): # checks all board columns for bingo.
   all_equal = True
   for col in range(5):
     all_equal = True
@@ -15,3 +15,6 @@ def check_columns(board): # checks all board columns for bingo
     if all_equal:
       break
   return all_equal
+
+def check_diagonals(board): # checks the board diagonals for bingo.
+  pass
