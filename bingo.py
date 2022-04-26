@@ -20,6 +20,7 @@ def getboard(gc): # Creates 2D array of the board and returns a board code.
     if i % 5 == 0:
       board_list.append(column)
       column = []
+  board_list[2][2] = 'x'
 
   return board_code
 
@@ -56,7 +57,7 @@ def update_board(ball): # Updates the board with the ball given
 def check_space(col, ball): # checks to see if space is equal to ball if so replaces it with x.
   for i in range(5):
     board_list[col][i] = 'x' if (board_list[col][i] == ball) else board_list[col][i]
-    check.bingo(board_list)
+  check.bingo(board_list)
   printboard.printboard(board_list)
 
 def quitgame(gc, bc): # Quits the game when the command is given.
