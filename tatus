@@ -1,0 +1,59 @@
+[33mcommit 496a094503f3647531f1493c1ca46014c90825e7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Justen Seward <JA_Seward@hotmail.com>
+Date:   Tue Apr 26 14:11:50 2022 -0500
+
+    fixed duplicate board bug
+
+[33mcommit c4c615a9c9b2da746d075d93f91e69036bab8af5[m
+Author: Ricardo Santoyo <ricardosantoyoch@gmail.com>
+Date:   Tue Apr 26 14:08:42 2022 -0500
+
+    removed client.oy
+
+[33mcommit 66544029f9866701bc5f8724c77f48019e5b05d5[m
+Author: Ricardo Santoyo <ricardosantoyoch@gmail.com>
+Date:   Tue Apr 26 13:59:24 2022 -0500
+
+    added check.bingo function which checks the board for bingo and returns a boolean value
+
+[33mcommit 96addcd1ac4555c75000372391b00990be957e79[m
+Author: jase5 <jase5@penguin>
+Date:   Tue Apr 26 13:48:56 2022 -0500
+
+    added join game ability
+
+[33mcommit 46f2cef15d77b989b5bdd2df4005669a9807ed46[m
+Author: jase5 <jase5@penguin>
+Date:   Thu Apr 21 17:46:52 2022 -0500
+
+    added printboard function
+
+[33mcommit 5133ccc56131727a08fed068ea63f8cd3abb17a7[m
+Author: Ricardo Santoyo <ricardosantoyoch@gmail.com>
+Date:   Thu Apr 21 16:44:58 2022 -0500
+
+    added update_board function
+
+[33mcommit 65df769a73c3df0aa2fd1e74941828c3414a403d[m
+Author: jase5 <jase5@penguin>
+Date:   Thu Apr 21 15:48:30 2022 -0500
+
+    quitgame function added
+
+[33mcommit 6e7b67ab4f2b0f6d680777af5720a6d80f4b151a[m
+Author: Ricardo Santoyo <ricardosantoyoch@gmail.com>
+Date:   Thu Apr 21 13:41:21 2022 -0500
+
+    added comment to bingo.py
+
+[33mcommit be72b3d700dce45269300d16c909c38631711dfe[m
+Author: Ricardo Santoyo <ricardosantoyoch@gmail.com>
+Date:   Thu Apr 21 13:26:27 2022 -0500
+
+    added README.md
+
+[33mcommit e7bc7d5d71eb538af4f01761424968ae425b8f56[m
+Author: Ricardo Santoyo <ricardosantoyoch@gmail.com>
+Date:   Thu Apr 21 13:04:14 2022 -0500
+
+    initial commit

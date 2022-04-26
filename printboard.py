@@ -4,7 +4,7 @@ def printboard(board_list): # Prints board in easy to read layout.
   print('─'*24)
   for i in range(5):
     for i in range(5):
-      print(f'|{(board_list[x][i]):^2s}|', end=' ')
+      print(f'|{(board_list[i][x]):^2s}|', end=' ')
     print('')
     print('─'*24)
     x+=1
