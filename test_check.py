@@ -58,3 +58,33 @@ class TestCheckDiagonals(unittest.TestCase): # Tests for bingo in diagonals.
     actual = check.check_diagonals(new_board)
     expected = True
     self.assertEqual(actual, expected)
+
+class TestCheckRows(unittest.TestCase): # Tests for bingo in rows.
+  def test_check_for_bingo_failure(self):
+    actual = check.check_rows(board)
+    expected = False
+    self.assertEqual(actual, expected)
+  
+  def test_check_for_bingo_success_1(self): # Tests top row.
+    new_board = copy.deepcopy(board)
+    for col in range(5):
+      new_board[col][0] = 'x'
+    actual = check.check_columns(new_board)
+    expected = True
+    self.assertEqual(actual, expected)
+
+  def test_check_for_bingo_success_2(self): # Tests middle row.
+    new_board = copy.deepcopy(board)
+    for col in range(5):
+      new_board[col][2] = 'x'
+    actual = check.check_columns(new_board)
+    expected = True
+    self.assertEqual(actual, expected)
+
+  def test_check_for_bingo_success_3(self): # Tests bottom row.
+    new_board = copy.deepcopy(board)
+    for col in range(5):
+      new_board[col][4] = 'x'
+    actual = check.check_columns(new_board)
+    expected = True
+    self.assertEqual(actual, expected)
