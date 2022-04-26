@@ -10,6 +10,12 @@ board = [
   ['75', '67', '73', '69', '70']
 ]
 
+def make_board(row):
+  new_board = copy.deepcopy(board)
+  for col in range(5):
+    new_board[col][row] = 'x'
+  return new_board
+
 class TestCheckColumns(unittest.TestCase): # Tests for bingo in columns.
   def test_check_for_bingo_failure(self):
     actual = check.check_columns(board)
@@ -66,25 +72,16 @@ class TestCheckRows(unittest.TestCase): # Tests for bingo in rows.
     self.assertEqual(actual, expected)
   
   def test_check_for_bingo_success_1(self): # Tests top row.
-    new_board = copy.deepcopy(board)
-    for col in range(5):
-      new_board[col][0] = 'x'
-    actual = check.check_columns(new_board)
+    actual = check.check_rows(make_board(0))
     expected = True
     self.assertEqual(actual, expected)
 
   def test_check_for_bingo_success_2(self): # Tests middle row.
-    new_board = copy.deepcopy(board)
-    for col in range(5):
-      new_board[col][2] = 'x'
-    actual = check.check_columns(new_board)
+    actual = check.check_rows(make_board(2))
     expected = True
     self.assertEqual(actual, expected)
 
   def test_check_for_bingo_success_3(self): # Tests bottom row.
-    new_board = copy.deepcopy(board)
-    for col in range(5):
-      new_board[col][4] = 'x'
-    actual = check.check_columns(new_board)
+    actual = check.check_rows(make_board(4))
     expected = True
     self.assertEqual(actual, expected)
