@@ -17,4 +17,14 @@ def check_columns(board): # checks all board columns for bingo.
   return all_equal
 
 def check_diagonals(board): # checks the board diagonals for bingo.
-  pass
+  all_equal = True
+  for loop in range(2):
+    all_equal = True
+    for i in range(5):
+      space = 4 - i if (loop == 1) else i
+      if board[i][space] != 'x':
+        all_equal = False
+        break
+    if all_equal:
+      break
+  return all_equal
