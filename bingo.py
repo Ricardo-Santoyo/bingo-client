@@ -79,7 +79,8 @@ while user_input < '6':
     case "1":
       game_code = newgame()
     case "2": 
-      newgame()
+      gamecode = input(f'Enter game code:\n')
+      game_code = gamecode
     case "3":
       board_code = getboard(f'GB#{game_code}')
     case "4":
