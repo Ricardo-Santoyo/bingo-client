@@ -59,27 +59,22 @@ def quitgame(gc, bc): # Quits the game when the command is given.
 
 ### Menu below ###
 user_input = ''
-printmenu.printmenu()
 while user_input < '6':
 
   match user_input:
     case "1":
       game_code = newgame()
-      printmenu.printmenu()
     case "2": 
       gamecode = input(f'Enter game code:\n')
       game_code = gamecode
-      printmenu.printmenu()
     case "3":
       board_code = getboard(f'GB#{game_code}')
-      printmenu.printmenu()
     case "4":
       getstatus(f'GS#{game_code}')
-      printmenu.printmenu()
     case "5":
       update_board(getball(game_code, board_code))
-      printmenu.printmenu()
 
+  printmenu.printmenu()
   user_input = input()
 else:
     quitgame(game_code, board_code)
