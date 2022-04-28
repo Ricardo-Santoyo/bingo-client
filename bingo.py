@@ -24,13 +24,13 @@ def getboard(gc): # Creates 2D array of the board and returns a board code.
   board_list[2][2] = 'x'
   return board_code
 
-def getstatus(gs): # Prints whether or not there is a winner.
+def getstatus(gs): # Prints the current status of the game.
   response = send.message(gs).split(',')
-  if response[-1] == "W":
-    print("Winner!")
-  else:
-    print(board_list)
-    print("No winner yet...")
+  print(f'Game Code: {response[0]}')
+  print(f'Board Code: {response[1]}')
+  print(f'Number of Balls Drawn: {response[2]}')
+  print(f'Status: {response[3]}')
+  printboard.printboard(board_list)
 
 def getball(gc, bc): # Gets the next ball from the server and returns the value.
   message = f'NB#{gc}#{bc}'
