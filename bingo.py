@@ -52,6 +52,10 @@ def update_board(ball): # Updates the board with the ball given
   col = get_column(ball)
   check_space(col, ball)
 
+def send_winner_info(BD): # Sends winner info to the server.
+  message = f"WW#{game_code}#{board_code}#{BD}"
+  send.message(message)
+
 def quitgame(gc, bc): # Quits the game when the command is given.
     message = f'QG#ter{gc}#{bc}'
     response = send.message(message).split(',')
