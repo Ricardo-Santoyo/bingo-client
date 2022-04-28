@@ -1,4 +1,5 @@
 def printmenu():
+  print('')
   print('MAIN MENU')
   print('Enter number for option')
   print('1 - New Game')
@@ -7,3 +8,4 @@ def printmenu():
   print('4 - Get Game Status')
   print('5 - Get Next Ball')
   print('6 - Quit Game & Client')
+  print('')
