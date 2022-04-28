@@ -10,7 +10,7 @@ board = [
   ['75', '67', '73', '69', '70']
 ]
 
-def make_board(place, isColumn):
+def make_board(place, isColumn=False):
   new_board = copy.deepcopy(board)
   if isColumn:
     new_board[place] = ['x', 'x', 'x', 'x', 'x']
