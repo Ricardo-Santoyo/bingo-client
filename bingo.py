@@ -20,7 +20,7 @@ def getboard(gc): # Creates 2D array of the board and returns a board code.
     if i % 5 == 0:
       board_list.append(column)
       column = []
-
+  board_list[2][2] = 'x'
   return board_code
 
 def getstatus(gs): # Prints whether or not there is a winner.
