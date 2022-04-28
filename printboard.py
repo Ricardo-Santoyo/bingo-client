@@ -1,5 +1,6 @@
 def printboard(board_list): # Prints board in easy to read layout.
   x = 0
+  print('─'*24)
   print(f'{"|B | |I | |N | |G | |O |":^24}')
   print('─'*24)
   for i in range(5):
