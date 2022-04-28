@@ -2,7 +2,7 @@ def bingo(board): # checks the game board for bingo.
   if check_columns(board) or check_rows(board) or check_diagonals(board):
     print('Winner!')
   else:
-    print('not yet.')
+    print('Not yet...')
 
 def check_columns(board): # checks all board columns for bingo.
   all_equal = True

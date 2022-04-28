@@ -1,6 +1,7 @@
 import send
 import printboard
 import check
+import printmenu
 
 game_code = None
 board_code = None
@@ -26,10 +27,10 @@ def getboard(gc): # Creates 2D array of the board and returns a board code.
 def getstatus(gs): # Prints whether or not there is a winner.
   response = send.message(gs).split(',')
   if response[-1] == "W":
-    print("Winner")
+    print("Winner!")
   else:
     print(board_list)
-    print("No winner yet.")
+    print("No winner yet...")
 
 def getball(gc, bc): # Gets the next ball from the server and returns the value.
   message = f'NB#{gc}#{bc}'
@@ -58,29 +59,26 @@ def quitgame(gc, bc): # Quits the game when the command is given.
 
 ### Menu below ###
 user_input = ''
-
+printmenu.printmenu()
 while user_input < '6':
-  print('MAIN MENU')
-  print('Enter number for option')
-  print('1 - New Game')
-  print('2 - Join Existing Game')
-  print('3 - Get Board')
-  print('4 - Get Game Status')
-  print('5 - Get Next Ball')
-  print('6 - Quit Game & Client')
 
   match user_input:
     case "1":
       game_code = newgame()
+      printmenu.printmenu()
     case "2": 
       gamecode = input(f'Enter game code:\n')
       game_code = gamecode
+      printmenu.printmenu()
     case "3":
       board_code = getboard(f'GB#{game_code}')
+      printmenu.printmenu()
     case "4":
       getstatus(f'GS#{game_code}')
+      printmenu.printmenu()
     case "5":
       update_board(getball(game_code, board_code))
+      printmenu.printmenu()
 
   user_input = input()
 else:
