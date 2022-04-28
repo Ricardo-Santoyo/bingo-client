@@ -17,22 +17,11 @@ def check_columns(board): # checks all board columns for bingo.
   return all_equal
 
 def check_rows(board): # checks all board rows for bingo.
-  allrows = []
-  row = []
-  x = 0
-  for i in range(5):
-    for i in range(5):
-      row.append(board[i][x])
-      if i+1 == 5:
-        allrows.append(row)
-        row = []
-    x+=1 
-  
   all_equal = True
-  for r in range(5):
+  for row in range(5):
     all_equal = True
-    for space in allrows[r]:
-      if space != 'x':
+    for col in range(5):
+      if board[col][row] != 'x':
         all_equal = False
         break
     if all_equal:
