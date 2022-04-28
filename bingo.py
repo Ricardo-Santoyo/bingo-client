@@ -45,16 +45,12 @@ def get_column(ball): # Returns the column number the ball would fall into.
 def check_space(col, ball): # checks to see if space is equal to ball if so replaces it with x.
   for i in range(5):
     board_list[col][i] = 'x' if (board_list[col][i] == ball) else board_list[col][i]
-  check.bingo(board_list)
+  check.bingo(board_list, game_code, board_code)
   printboard.printboard(board_list)
 
 def update_board(ball): # Updates the board with the ball given
   col = get_column(ball)
   check_space(col, ball)
-
-def send_winner_info(BD): # Sends winner info to the server.
-  message = f"WW#{game_code}#{board_code}#{BD}"
-  send.message(message)
 
 def quitgame(gc, bc): # Quits the game when the command is given.
     message = f'QG#ter{gc}#{bc}'
