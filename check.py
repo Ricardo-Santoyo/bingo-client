@@ -1,8 +1,10 @@
 import send
 
 def bingo(board, game_code, board_code): # checks the game board for bingo.
-  if check_columns(board) or check_rows(board) or check_diagonals(board):
-    print('\nWinner!\n')
+  BD = check_columns(board) or check_rows(board) or check_diagonals(board)
+  if BD:
+    send_winner_info(BD, game_code, board_code)
+    print(f'\nWinner by {BD}!\n')
   else:
     print('\nNot yet!\n')
 
