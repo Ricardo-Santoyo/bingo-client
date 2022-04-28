@@ -44,7 +44,7 @@ def get_column(ball): # Returns the column number the ball would fall into.
 def check_space(col, ball): # checks to see if space is equal to ball if so replaces it with x.
   for i in range(5):
     board_list[col][i] = 'x' if (board_list[col][i] == ball) else board_list[col][i]
-    check.bingo(board_list)
+  check.bingo(board_list)
   printboard.printboard(board_list)
 
 def update_board(ball): # Updates the board with the ball given

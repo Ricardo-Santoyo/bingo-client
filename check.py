@@ -16,7 +16,7 @@ def check_columns(board): # checks all board columns for bingo.
       break
   return all_equal
 
-def check_rows(board):
+def check_rows(board): # checks all board rows for bingo.
   allrows = []
   row = []
   x = 0
@@ -27,6 +27,7 @@ def check_rows(board):
         allrows.append(row)
         row = []
     x+=1 
+  
   all_equal = True
   for r in range(5):
     all_equal = True
