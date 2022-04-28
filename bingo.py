@@ -13,14 +13,13 @@ def newgame(): # Starts a new game and returns the game code.
 def getboard(gc): # Creates 2D array of the board and returns a board code.
   response = send.message(gc).split(',')
   board_code = response.pop(0)
-
+  
   column = []
   for i in range(1, 26):
     column.append(response[i - 1])
     if i % 5 == 0:
       board_list.append(column)
       column = []
-  board_list[2][2] = 'x'
 
   return board_code
 
@@ -57,7 +56,7 @@ def update_board(ball): # Updates the board with the ball given
 def check_space(col, ball): # checks to see if space is equal to ball if so replaces it with x.
   for i in range(5):
     board_list[col][i] = 'x' if (board_list[col][i] == ball) else board_list[col][i]
-  check.bingo(board_list)
+    check.bingo(board_list)
   printboard.printboard(board_list)
 
 def quitgame(gc, bc): # Quits the game when the command is given.
@@ -90,7 +89,7 @@ while user_input < '6':
       getstatus(f'GS#{game_code}')
     case "5":
       update_board(getball(game_code, board_code))
-  
+
   user_input = input()
 else:
     quitgame(game_code, board_code)
