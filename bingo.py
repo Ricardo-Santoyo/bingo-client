@@ -36,28 +36,20 @@ def getball(gc, bc): # Gets the next ball from the server and returns the value.
   response = send.message(message).split(',')
   return response[0]
 
-def update_board(ball): # Updates the board with the ball given
-  if ball > '60':
-    check_space(4, ball)
-    print('o')
-  elif ball > '45':
-    check_space(3, ball)
-    print('g')
-  elif ball > '30':
-    check_space(2, ball)
-    print('n')
-  elif ball > '15':
-    check_space(1, ball)
-    print('i')
-  else:
-    check_space(0, ball)
-    print('b')
+def get_column(ball): # Returns the column number the ball would fall into.
+  for i in range(4, -1, -1):
+    if ball > str(i * 15):
+      return i
 
 def check_space(col, ball): # checks to see if space is equal to ball if so replaces it with x.
   for i in range(5):
     board_list[col][i] = 'x' if (board_list[col][i] == ball) else board_list[col][i]
     check.bingo(board_list)
   printboard.printboard(board_list)
+
+def update_board(ball): # Updates the board with the ball given
+  col = get_column(ball)
+  check_space(col, ball)
 
 def quitgame(gc, bc): # Quits the game when the command is given.
     message = f'QG#ter{gc}#{bc}'
