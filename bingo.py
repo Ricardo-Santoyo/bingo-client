@@ -75,6 +75,6 @@ while user_input < '6':
       update_board(getball(game_code, board_code))
 
   printmenu.printmenu()
-  user_input = input()
+  user_input = input('\nEnter menu option here: ')
 else:
-    quitgame(game_code, board_code)
+  quitgame(game_code, board_code)
