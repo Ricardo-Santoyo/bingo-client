@@ -1,5 +1,5 @@
 # Bingo Client
 
-### School project in collaboration with Jase5
+### School project in collaboration with Justen Seward
 
-### Check out Jase5's github page here https://github.com/Jase5
+### Check out Justen Seward's github page here https://github.com/Jase5
