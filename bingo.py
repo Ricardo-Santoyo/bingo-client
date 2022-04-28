@@ -37,6 +37,11 @@ def getball(gc, bc): # Gets the next ball from the server and returns the value.
   response = send.message(message).split(',')
   return response[0]
 
+def get_column(ball): # Returns the column number the ball would fall into.
+  for i in range(4, -1, -1):
+    if ball > str(i * 15):
+      return i
+
 def update_board(ball): # Updates the board with the ball given
   if ball > '60':
     check_space(4, ball)
