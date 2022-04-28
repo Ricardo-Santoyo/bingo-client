@@ -1,5 +1,5 @@
 def bingo(board): # checks the game board for bingo.
-  if check_columns(board) or check_rows(board):
+  if check_columns(board) or check_rows(board) or check_diagonals(board):
     print('Winner!')
   else:
     print('not yet.')
