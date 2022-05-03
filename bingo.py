@@ -39,7 +39,7 @@ def getball(gc, bc): # Gets the next ball from the server and returns the value.
 
 def get_column(ball): # Returns the column number the ball would fall into.
   for i in range(4, -1, -1):
-    if ball > str(i * 15):
+    if int(ball) > i * 15:
       return i
 
 def check_space(col, ball): # checks to see if space is equal to ball if so replaces it with x.
